@@ -1,3 +1,4 @@
+//array already given in starter code
 var finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -86,16 +87,25 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
-console.log("Financial Analysis") // Added heading for the analysis
-console.log("--------------------------") // added hiphens as separation
+//declaring othe variable to 0
+var TotalAmount = 0;
+
+// Added heading for the analysis
+console.log("Financial Analysis") 
+
+// added hiphens as separation
+console.log("--------------------------") 
 // The total number of months included in the dataset.
 
 console.log("Total Months:  " + finances.length) // .length calculates the length of the array finances. I have added some text in quotes to make it appear in console and concatenated it with the length property. So that we can get string and length together 
 
-
-
-
 // The net total amount of Profit/Losses over the entire period.
+
+for(var i=0;i<finances.length;i++){  //This is for loop where we declare, give condition and added some increments
+  TotalAmount = TotalAmount + finances[i][1];  //TotalAmount will initial be 0 and the keep on adding and storing new number after addition. After completing the loop the end result will be stored in TotalAmount
+}
+console.log("Total: "+"$" + TotalAmount); // This is to display the output in console which is stored in TotalAmount
+
 
 // The average of the changes in Profit/Losses over the entire period.
 
