@@ -90,7 +90,7 @@ console.log("Financial Analysis") // Added heading for the analysis
 console.log("--------------------------") // added hiphens as separation
 // The total number of months included in the dataset.
 
-
+console.log("Total Months:  " + finances.length) // .length calculates the length of the array finances. I have added some text in quotes to make it appear in console and concatenated it with the length property. So that we can get string and length together 
 
 
 
