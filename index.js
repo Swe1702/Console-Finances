@@ -130,7 +130,20 @@ for (var i = 0; i < finances.length; i++) { // writing condition in for loop fol
     }
   }
 }
-console.log("Greatest Increase in Profits: " + date + " ($" + amount + ")");// writing in console for the output to display in console.
+console.log("Greatest Increase in Profits/Loses: " + date + " ($" + amount + ")");// writing in console for the output to display in console.
 
 
 // The greatest decrease in Profit/Losses (date and amount) over the entire period.
+
+var amount=0;  //declared another variable
+for (var i = 0; i < finances.length; i++) { // writing condition in for loop followed by if loop
+  if (i > 0) {  
+    var change = finances[i][1] - finances[i - 1][1];  //for claculating the change in difference between months
+
+    if (change < amount) {   // if change is less than amount the value in change will be assigned to amount and process continues.
+      amount = change;
+      var date = finances[i][0]; //based on i value we will get the months and store in date
+    }
+  }
+}
+console.log("Greatest Decrease in Profits/Loses: " + date + " ($" + amount + ")");// writing in console for the output to display in console.
