@@ -108,12 +108,6 @@ console.log("Total: "+"$" + TotalAmount); // This is to display the output in co
 
 
 // The average of the changes in Profit/Losses over the entire period.
-
- var Average = TotalAmount / (finances.length -1);
- var Avg = (finances.length -1) 
- console.log(Average);
-
-
 // You will need to track what the total change in Profit/Losses are from month to month and then find the average.
 // (Total/(Number of months - 1))
 var NumOfMonths = finances.length; // declaring .length to a veriable
@@ -125,5 +119,18 @@ var averageChange = totalChange / (NumOfMonths - 1); // calculating average and 
 console.log("Average Change: $" + averageChange.toFixed(2)); // writing in console for the output to display in console.
 // The greatest increase in Profit/Losses (date and amount) over the entire period.
 
-// The greatest decrease in Profit/Losses (date and amount) over the entire period.
+var amount=0;  //declared another variable
+for (var i = 0; i < finances.length; i++) { // writing condition in for loop followed by if loop
+  if (i > 0) {  
+    var change = finances[i][1] - finances[i - 1][1];  //for claculating the change in difference between months
 
+    if (change > amount) {   // if change is greater than amount the value in change will be assigned to amount and process continues.
+      amount = change;
+      var date = finances[i][0]; //based on i value we will get the months and store in date
+    }
+  }
+}
+console.log("Greatest Increase in Profits: " + date + " ($" + amount + ")");// writing in console for the output to display in console.
+
+
+// The greatest decrease in Profit/Losses (date and amount) over the entire period.
